@@ -1,0 +1,82 @@
+{
+  "name": "dukinfotech",
+  "version": "1.0.0",
+  "description": "My simple portfolio web app built with react and typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --mode production --config webpack/prod.config.js",
+    "start": "NODE_ENV=development webpack-dev-server --mode development --config webpack/dev.config.js --open --hot",
+    "start:prod": "npm run build && babel-node  server.js",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage --colors",
+    "lint:init": "tslint --init",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "postinstall": "npm run start:prod"
+  },
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ucheduk/dukinfotech.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "dukinfotech"
+  ],
+  "author": "mrduk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ucheduk/dukinfotech/issues"
+  },
+  "homepage": "https://dukinfotech.com.ng",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "@types/react-router-dom": "^4.3.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.1.0",
+    "dotenv-webpack": "^1.7.0",
+    "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "sass-loader": "^7.1.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
