@@ -10,7 +10,7 @@ const Header = () => (
       <nav className="main-header-nav">
         <ul>
           <li><Link to="/" className="underline-from-left active">Home</Link></li>
-          <li><Link to="/" className="underline-from-left">About</Link></li>
+          <li><Link to="/about" className="underline-from-left">About</Link></li>
           <li><Link to="/" className="underline-from-left">Portfolio</Link></li>
           <li><Link to="/" className="underline-from-left">My Blog</Link></li>
           <li><Link to="/" className="underline-from-left">Contact</Link></li>
