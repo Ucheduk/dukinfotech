@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 // import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer";
 import "./layout.css"
 
 interface LayoutProps {
@@ -31,6 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="full-height-grow">
       <Header />
         {children}
+      <Footer />
     </div>
   )
 }

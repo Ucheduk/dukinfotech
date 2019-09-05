@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const Portfolio = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -15,6 +16,9 @@ const Portfolio = () => {
               title
               tags
               image
+            }
+            fields {
+              slug
             }
           }
         }
@@ -36,11 +40,12 @@ const Portfolio = () => {
           <div className="portfolio-content">
             {
               data.allMarkdownRemark.edges.map((edge: any): any => {
-                const {title, tags, image} = edge.node.frontmatter;
+                const { title, tags, image } = edge.node.frontmatter;
+                const { slug } = edge.node.fields;
                 const tagList = tags.split(', ');
                 const imageSrc = require(`../assets/img/${image}`);
                 return (
-                  <a href="single-portfolio.html">
+                  <Link to={`/portfolio/${slug}`}>
                     <div className="portfolio-content__boxes">
                       <div className="black-overlay"></div>
                       <div className="portfolio-content__header">{title}</div>
@@ -52,7 +57,7 @@ const Portfolio = () => {
                       })}
                       <div className="portfolio-content__tags">More...</div>
                     </div>
-                  </a>
+                  </Link>
                 )
               })
             }
@@ -60,21 +65,6 @@ const Portfolio = () => {
         </div>
       
       </section>
-      <footer className="container main-footer">
-            <div className="copyright">
-              <p>&copy; 2019 Duk Stack. Made with 💜 for Gatsby</p>
-            </div>
-
-            <div className="social social-footer">
-              <i className="zmdi zmdi-linkedin"></i>
-              <i className="zmdi zmdi-twitter"></i>
-              <i className="zmdi zmdi-instagram"></i>
-              <i className="zmdi zmdi-facebook"></i>
-              <i className="zmdi zmdi-github"></i>
-              <i className="zmdi zmdi-behance"></i>
-              <i className="zmdi zmdi-dribbble"></i>
-            </div>
-      </footer>
 
     <div className="bg-circle-1"></div>
     <div className="bg-circle-2"></div>

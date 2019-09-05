@@ -1,4 +1,3 @@
-import { Link } from "gatsby";
 import React from "react";
 
 const Footer = () => (
@@ -9,13 +8,29 @@ const Footer = () => (
     </div>
 
     <div className="social social-footer">
-      <i className="zmdi zmdi-linkedin"></i>
-      <i className="zmdi zmdi-twitter"></i>
-      <i className="zmdi zmdi-instagram"></i>
-      <i className="zmdi zmdi-facebook"></i>
-      <i className="zmdi zmdi-github"></i>
-      <i className="zmdi zmdi-behance"></i>
-      <i className="zmdi zmdi-dribbble"></i>
+        <a className="underline-from-left" target='blank' href="https://www.linkedin.com/in/uche-nwakwuo-12566067">
+          <i className="zmdi zmdi-linkedin"></i>
+        </a>
+
+        <a className="underline-from-left" target='blank' href="https://twitter.com/duk_stack">
+          <i className="zmdi zmdi-twitter"></i>
+        </a>
+
+        <a className="underline-from-left" target='blank' href="https://www.instagram.com/duk_stack">
+          <i className="zmdi zmdi-instagram"></i>
+        </a>
+
+        <a className="underline-from-left" target='blank' href="https://www.facebook.com/uknwakwuo">
+          <i className="zmdi zmdi-facebook"></i>
+        </a>
+
+        <a className="underline-from-left" target='blank' href="https://github.com/Ucheduk">
+          <i className="zmdi zmdi-github"></i>
+        </a>
+
+        <a className="underline-from-left" target='blank' href="https://www.behance.net/nwakwuouche">
+          <i className="zmdi zmdi-behance"></i>
+        </a>
     </div>
   </footer>
 )

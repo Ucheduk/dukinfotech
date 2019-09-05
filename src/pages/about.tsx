@@ -30,7 +30,7 @@ const About = () => (
             all the code development, or whatever other role you see me best in.
             <br/><br/>
             In cases when you already have an existing team, but you would still 
-            use some help, <a href="contact.html">contact me</a> as well. I’ll fit in very quickly, I promise.
+            use some help, <Link to="contact">contact me</Link> as well. I’ll fit in very quickly, I promise.
           </span>
         </div>
     </section>

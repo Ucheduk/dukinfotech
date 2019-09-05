@@ -1,18 +1,20 @@
 .portfolio-section {
   margin-top: 2rem;
+  width: 100%;
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: center;
   flex-grow: 1;
   z-index: 1;
 }
 
 .portfolio-section__content {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 1rem;
-  align-self: center;
+  /* margin: 1rem; */
+  /* align-self: center; */
 }
 
 .portfolio-content {
@@ -73,7 +75,8 @@
 }
 
 .black-overlay {
-  width: 0%; /* 100% - to show */
+  width: 100%;
+  opacity: 0; /* 100% - to show */
   height: 100%;
   position: absolute;
   background-color: rgba(0,0,0,0.65);
@@ -90,5 +93,13 @@
   margin: 0rem .5rem;
   z-index: 13;
   transition: all 0.5s ease-out;
-  /* display: none; */
+  display: none;
+}
+
+.portfolio-content__boxes:hover .portfolio-content__tags {
+  display: block;
+}
+
+.portfolio-content__boxes:hover .black-overlay {
+  opacity: 1;
 }

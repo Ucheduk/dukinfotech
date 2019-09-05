@@ -3,8 +3,6 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Footer from '../components/footer';
-// import '../components/index.css';
 
 const IndexPage = () => (
   <Layout>
@@ -18,20 +16,14 @@ const IndexPage = () => (
       <h3 className="subtitle">Hello</h3>
       <h1 className="title">I'm Uche Nwakwuo</h1>
       <span className="code-name">{`{duk_stack}`}</span>
-      <span className="text-content">A Full Stack Developer and UI/UX Designer.</span>
-      <div className="social">
-        <i className="zmdi zmdi-linkedin"></i>
-        <i className="zmdi zmdi-twitter"></i>
-        <i className="zmdi zmdi-instagram"></i>
-        <i className="zmdi zmdi-facebook"></i>
-        <i className="zmdi zmdi-github"></i>
-        <i className="zmdi zmdi-behance"></i>
-        <i className="zmdi zmdi-dribbble"></i>
-      </div>
-      <Link to="contact.html" className="btn">Hire Me</Link>
+      <span className="text-content">A Full Stack Developer and UI/UX Designer.<br/>
+      Chief Executive Officer at Cre8tive Tech
+      </span>
+      <Link to="contact" className="btn">Hire Me</Link>
     </div>
   
   </section>
+
   <div className="bg-circle-1"></div>
   <div className="bg-circle-2"></div>
   <div className="bg-circle-3"></div>
