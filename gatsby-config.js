@@ -29,6 +29,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `wp-api.dukinfotech.com.ng`,
+        protocol: `https`,
+        hostingWPCOM: false,
+        useACF: false,
+        verboseOutput: true
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
