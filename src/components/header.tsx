@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { Fragment } from "react";
 const logo = require('../assets/img/logo.png');
 
 class Header extends React.Component {
@@ -28,22 +28,29 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="main-header">
-        <div className="container main-header-row">
-          <Link to="/"><img className="main-header-logo" src={logo} alt="My Logo" /></Link>
-          <nav className="main-header-nav">
-            <ul>
-              <li><Link to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
-              <li><Link to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
-              <li><Link to="/portfolio" className="underline-from-left" activeClassName="active">Portfolio</Link></li>
-              <li><Link to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
-              <li><Link to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
-            </ul>
-          </nav>
-          <i onClick={this.openMobileNav} className="zmdi zmdi-menu menu"></i>
-          <i onClick={this.closeMobileNav} className="zmdi zmdi-close close"></i>
-        </div>
+      <Fragment>
+        <header className="main-header">
+          <div className="container main-header-row">
+            <Link to="/"><img className="main-header-logo" src={logo} alt="My Logo" /></Link>
+            <nav className="main-header-nav">
+              <ul>
+                <li><Link to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
+                <li><Link to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
+                <li><Link to="/portfolio" className="underline-from-left" activeClassName="active">Portfolio</Link></li>
+                <li><Link to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
+                <li><Link to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
+              </ul>
+            </nav>
+            <i onClick={this.openMobileNav} className="zmdi zmdi-menu menu"></i>
+            <i onClick={this.closeMobileNav} className="zmdi zmdi-close close"></i>
+          </div>
+          
+        </header>
         <nav className="mobile-nav">
+        <div className="avatar">
+          <div className="avatar-img"></div>
+          <p>@duk_stack</p>
+        </div>
           <ul>
             <li><Link onClick={this.closeMobileNav} to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
             <li><Link onClick={this.closeMobileNav} to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
@@ -51,8 +58,8 @@ class Header extends React.Component {
             <li><Link onClick={this.closeMobileNav} to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
             <li><Link onClick={this.closeMobileNav} to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
           </ul>
-        </nav> 
-      </header>
+        </nav>
+      </Fragment> 
     )
   }
 }

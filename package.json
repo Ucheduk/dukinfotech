@@ -36,8 +36,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "playground": "GATSBY_GRAPHQL_IDE=playground",
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "playground": "env GATSBY_GRAPHQL_IDE=playground",
+    "develop": "env GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
