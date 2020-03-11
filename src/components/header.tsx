@@ -9,6 +9,8 @@ class Header extends React.Component {
     let mobileNav = document.querySelector(".mobile-nav");
     let menu = document.querySelector(".menu");
     let close = document.querySelector(".close");
+    let body = document.querySelector("body");
+    body.style.overflow = 'hidden';
     if(mobileNav) mobileNav.classList.add("show");
     if(mainHeader) mainHeader.classList.add("open");
     if(menu) menu.classList.add("hide");
@@ -20,6 +22,8 @@ class Header extends React.Component {
     let mobileNav = document.querySelector(".mobile-nav");
     let menu = document.querySelector(".menu");
     let close = document.querySelector(".close");
+    let body = document.querySelector("body");
+    body.style.overflow = 'auto';
     if(mobileNav) mobileNav.classList.remove("show");
     if(mainHeader) mainHeader.classList.remove("open");
     if(menu) menu.classList.remove("hide");
@@ -49,7 +53,7 @@ class Header extends React.Component {
         <nav className="mobile-nav">
         <div className="avatar">
           <div className="avatar-img"></div>
-          <p>@duk_stack</p>
+          <p>Uche Nwakwuo<br/>{'{duk_stack}'}</p>
         </div>
           <ul>
             <li><Link onClick={this.closeMobileNav} to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
