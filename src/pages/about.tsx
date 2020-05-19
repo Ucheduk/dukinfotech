@@ -15,6 +15,8 @@ const About = () => (
           <h1 className="title">About Me</h1>
           <span className="text-content">I am a Full Stack Developer and UI/UX Designer from Nigeria.<br/><br/> 
             I am a JavaScript preacher and a lover of responsive websites.<br/><br/>
+            At 2019 I founded a digital agency in Nigeria named <a className="underline-from-left" target='blank' href="https://www.cre8tivetech.com/">Cre8tive Tech <i className="zmdi zmdi-arrow-right-top link-arrow"></i></a>, with the aim
+            to deliver quality and innovative solutions for startups.<br/><br/>
             My current toolset includes: <br/>
             <ul>
               <li>UI/UX - Figma, AdobeXD, Illustrator and Photoshop.</li>
@@ -30,7 +32,7 @@ const About = () => (
             all the code development, or whatever other role you see me best in.
             <br/><br/>
             In cases when you already have an existing team, but you would still 
-            use some help, <Link to="contact">contact me</Link> as well. I’ll fit in very quickly, I promise.
+            use some help, <Link className="underline-from-left" to="contact">contact me</Link> as well. I’ll fit in very quickly, I promise.
           </span>
         </div>
     </section>

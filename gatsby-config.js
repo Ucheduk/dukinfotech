@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Duk Stack - Full Stack Developer`,
-    description: `Uche Nwakwuo {Duk_Stack} Portfolio Website. Made with 💜 for Gatsby`,
+    title: `Dukstack - A Full Stack Developer`,
+    description: `Uche Nwakwuo {duk_stack} Portfolio Website. Made with 💜 for Gatsby`,
     author: `Duk_Stack`,
   },
   plugins: [

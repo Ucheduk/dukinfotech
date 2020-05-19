@@ -4,7 +4,7 @@ const Footer = () => (
   
   <footer className="container main-footer">
     <div className="copyright">
-      <p>&copy; {new Date().getFullYear()} Duk Stack. Made with 💜 for Gatsby</p>
+      <p>&copy; {new Date().getFullYear()} Dukstack. Made with 💜 for Gatsby</p>
     </div>
 
     <div className="social social-footer">

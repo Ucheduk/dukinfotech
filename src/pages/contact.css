@@ -20,7 +20,7 @@
   float: right;
   width: 100px;
   /* padding: .75rem 1.5rem; */
-  background: var(--primary-color) !important;
+  background: #4F3A65 !important;
   border-radius: .3rem;
   color: #fff;
   font-size: .9rem;
@@ -48,9 +48,7 @@
 }
 .success {
   color: rgb(23, 221, 23);
-  margin-top: 20px;
   font-size: .9rem !important;
-  /* display: inline; */
 }
 
 .request-form {
@@ -94,8 +92,8 @@
     select:-webkit-autofill,
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
-      box-shadow: 0 0 0px 1000px #fff inset;
-      -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+      box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+      -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
       -webkit-text-fill-color: var(--primary-color);
       font-family: Poppins-Regular;
       background: transparent;

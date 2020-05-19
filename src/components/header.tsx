@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState, Fragment} from "react";
 const logo = require('../assets/img/logo.png');
 
 const Header = () => {
@@ -11,7 +11,8 @@ const Header = () => {
       const toggle = document.querySelector('.toggle');
       toggle.classList.add("dark-mode");
       root.style.setProperty('--bg-color', 'rgb(22, 7, 39)');
-      root.style.setProperty('--font-color', '#fff');
+      root.style.setProperty('--font-color', '#4F3A65');
+      root.style.setProperty('--primary-color', '#fff');
       root.style.setProperty('--box-shadow', 'rgba(255,255,255,0.35)');
     }
   }
@@ -23,13 +24,15 @@ const Header = () => {
     // const bgColor = root.style.getPropertyValue('--bg-color')
     if (mode === 'dark') {
       root.style.setProperty('--bg-color', '#fff');
-      root.style.setProperty('--font-color', '#030805');
+      root.style.setProperty('--font-color', '#fff');
+      root.style.setProperty('--primary-color', '#4F3A65');
       root.style.setProperty('--box-shadow', 'rgba(0,0,0,0.35)');
       localStorage.setItem('mode', 'light');
       setMode('light')
     } else {
       root.style.setProperty('--bg-color', 'rgb(22, 7, 39)');
-      root.style.setProperty('--font-color', '#fff');
+      root.style.setProperty('--font-color', '#4F3A65');
+      root.style.setProperty('--primary-color', '#fff');
       root.style.setProperty('--box-shadow', 'rgba(255,255,255,0.35)');
       localStorage.setItem('mode', 'dark');
       setMode('dark')
@@ -42,6 +45,8 @@ const Header = () => {
     let mobileNav = document.querySelector(".mobile-nav");
     let menu = document.querySelector(".menu");
     let close = document.querySelector(".close");
+    let body = document.querySelector("body");
+    body.style.overflow = 'hidden';
     if(mobileNav) mobileNav.classList.add("show");
     if(mainHeader) mainHeader.classList.add("open");
     if(menu) menu.classList.add("hide");
@@ -53,45 +58,51 @@ const Header = () => {
     let mobileNav = document.querySelector(".mobile-nav");
     let menu = document.querySelector(".menu");
     let close = document.querySelector(".close");
+    let body = document.querySelector("body");
+    body.style.overflow = 'auto';
     if(mobileNav) mobileNav.classList.remove("show");
     if(mainHeader) mainHeader.classList.remove("open");
     if(menu) menu.classList.remove("hide");
     if(close) close.classList.remove("display");
   }
+    return (
+      <Fragment>
+        <header className="main-header">
+          <div className="container main-header-row">
+            <Link to="/"><img className="main-header-logo" src={logo} alt="My Logo" /></Link>
+            <nav className="main-header-nav">
+              <ul>
+                <li><Link to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
+                <li><Link to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
+                <li><Link to="/portfolio" className="underline-from-left" activeClassName="active">Portfolio</Link></li>
+                <li><Link to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
+                <li><Link to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
+              </ul>
+            </nav>
+            <i onClick={openMobileNav} className="zmdi zmdi-menu menu"></i>
+            <i onClick={closeMobileNav} className="zmdi zmdi-close close"></i>
+            <div className="toggle-wrapp">
+              <span className="toggle" onClick={toggleMode}></span>
+            </div>
+          </div>
+        </header>
 
-  return (
-    <header className="main-header">
-      <div className="container main-header-row">
-        <Link to="/"><img className="main-header-logo" src={logo} alt="My Logo" /></Link>
-        <nav className="main-header-nav">
+        <nav className="mobile-nav">
+          <div className="avatar">
+            <div className="avatar-img"></div>
+            <p>Uche Nwakwuo<br/>{'{duk_stack}'}</p>
+          </div>
+
           <ul>
             <li><Link to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
             <li><Link to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
             <li><Link to="/portfolio" className="underline-from-left" activeClassName="active">Portfolio</Link></li>
             <li><Link to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
             <li><Link to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
-          </ul>
-          
+          </ul> 
         </nav>
-          
-        <span onClick={openMobileNav} className="menu">
-          <i className="zmdi zmdi-menu "></i>
-        </span>
-        <i onClick={closeMobileNav} className="zmdi zmdi-close close"></i>
-        <div className="toggle-wrapp">
-            <span className="toggle" onClick={toggleMode}></span>
-          </div>
-      </div>
-      <nav className="mobile-nav">
-        <ul>
-          <li><Link onClick={closeMobileNav} to="/" className="underline-from-left" activeClassName="active">Home</Link></li>
-          <li><Link onClick={closeMobileNav} to="/about" className="underline-from-left" activeClassName="active">About</Link></li>
-          <li><Link onClick={closeMobileNav} to="/portfolio" className="underline-from-left" activeClassName="active">Portfolio</Link></li>
-          <li><Link onClick={closeMobileNav} to="/blog" className="underline-from-left" activeClassName="active">My Blog</Link></li>
-          <li><Link onClick={closeMobileNav} to="/contact" className="underline-from-left" activeClassName="active">Contact</Link></li>
-        </ul>
-      </nav> 
-    </header>
+        
+      </Fragment> 
   )
 }
 

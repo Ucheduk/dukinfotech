@@ -7,13 +7,15 @@ import NameInput from "../components/Form/nameInput";
 import TextInput from "../components/Form/textInput";
 import EmailInput from "../components/Form/emailInput";
 import validate from "../components/Form//validator";
-// import messagesRef from "../firebase";
+import getFirebase from "../components/firebase";
 import './contact.css'
 
 
 interface MyProps {}
 
 interface MyState {
+  database: any,
+  messagesRef: any,
   trySubmit: boolean;
   formIsValid: boolean;
   showConfirmMsg: boolean;
@@ -24,10 +26,10 @@ class Contact extends React.Component<MyProps, MyState> {
 
   static defaultProps: MyProps = {}
   state: Readonly<MyState> = {
+    database: null,
+    messagesRef: null,
     trySubmit: false,
-
     formIsValid: false,
-
     showConfirmMsg: false,
 
     formControls: {
@@ -65,6 +67,37 @@ class Contact extends React.Component<MyProps, MyState> {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    const lazyApp = import('@firebase/app')
+    const lazyDatabase = import('@firebase/database')
+
+    Promise.all([lazyApp, lazyDatabase]).then(([firebase]) => {
+      const database = getFirebase(firebase).database()
+      
+      //Reference messeges collection
+      const messagesRef = getFirebase(firebase).database().ref('messeges');
+
+      this.setState({
+        database,
+        messagesRef
+      })
+    })
+  }
+
+  triggerConfirmMsg = () => {
+    if (this.state.formIsValid) {
+      this.setState({
+        showConfirmMsg: true
+      })
+      setTimeout(() => {
+        this.setState({
+          showConfirmMsg: false
+        })
+      }, 5000);
+    }
+  }
+
   changeHandler = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
       
     const name = event.currentTarget.name;
@@ -99,14 +132,6 @@ class Contact extends React.Component<MyProps, MyState> {
   
   }
 
-  triggerConfirmMsg = () => {
-    if (this.state.formIsValid) {
-      this.setState({
-        showConfirmMsg: true
-      })
-    }
-  }
-
   handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const data = {
@@ -116,8 +141,8 @@ class Contact extends React.Component<MyProps, MyState> {
     }
 
     // Sending Message to Firebase
-    // let newmessagesRef = messagesRef.push();
-    // newmessagesRef.set(data)
+    let newmessagesRef = this.state.messagesRef.push();
+    newmessagesRef.set(data)
     console.log(data)
 
     const updatedControls = {
@@ -184,7 +209,7 @@ class Contact extends React.Component<MyProps, MyState> {
 
                   <div className="form-group">
                       <input type="submit" name="send" id="send" disabled={!this.state.formIsValid} value="Send"/>
-                      {this.state.showConfirmMsg? (<p className="success">Thanks for your Message!</p>) : null}
+                      {this.state.showConfirmMsg? (<p className="success">Thanks for your Message!<br/>I will get in touch with you soon.</p>) : null}
                   </div>
                 </form>
               </span>
