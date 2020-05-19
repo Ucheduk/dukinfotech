@@ -315,11 +315,11 @@ template {
 }
 @media (max-width: 1245px) {
   .toggle-wrapp {
-    padding-right: 50px;
+    right: 50px;
   }
 }
 .toggle {
-  width: 40px;
+  width: 45px;
   height: 25px;
   position: relative;
   border: 1.5px solid var(--primary-color);
