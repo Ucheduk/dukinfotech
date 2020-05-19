@@ -4,7 +4,7 @@ const logo = require('../assets/img/logo.png');
 
 const Header = () => {
 
-  const [mode, setMode] = useState(localStorage.getItem('mode'));
+  const [mode, setMode] = useState(typeof window !== 'undefined' && window? localStorage.getItem('mode') : 'light');
   const checkMode = () => {
     if (mode === 'dark') {
       const root = document.querySelector(':root');
