@@ -143,7 +143,7 @@ class Contact extends React.Component<MyProps, MyState> {
     // Sending Message to Firebase
     let newmessagesRef = this.state.messagesRef.push();
     newmessagesRef.set(data)
-    console.log(data)
+    // console.log(data)
 
     const updatedControls = {
       ...this.state.formControls

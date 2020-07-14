@@ -28,7 +28,7 @@ const Portfolio = () => {
 
   return (
     <Layout>
-      <SEO title="Portfolio - Uche Nwakwuo {Duk_Stack}" />
+      <SEO title="Portfolio Page" />
       <section className="container portfolio-section">
         <div className="portfolio-section__content">
           <h1 className="title">Portfolio</h1>

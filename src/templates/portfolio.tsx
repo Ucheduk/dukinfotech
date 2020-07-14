@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { Link, graphql } from "gatsby";
 import './single-portfolio.css'
 
@@ -34,13 +34,12 @@ export const query = graphql`
   `
 
 const Portfolio = ({ data }: PortfolioProps) => {
-
   const imageSrc = require(`../assets/img/${data.markdownRemark.frontmatter.image}`);
   const technologiesList = data.markdownRemark.frontmatter.technologies.split(', ');
 
   return (
     <Layout>
-      <SEO title="Portfolio - Uche Nwakwuo {Duk_Stack}" />
+      <SEO title={`Portfolio - ${data.markdownRemark.frontmatter.title}`} />
       <section className="container single-portfolio-section">
         <div className="single-portfolio-section__content">
           <h1 className="title">{data.markdownRemark.frontmatter.title}</h1>
@@ -68,6 +67,7 @@ const Portfolio = ({ data }: PortfolioProps) => {
               })}
             </ul>
           </span>
+          <Link to='/portfolio' className="visit-btn"><i className="zmdi zmdi-arrow-back arrow"></i>Go Back</Link>
         </div>
       </section>
       

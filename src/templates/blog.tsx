@@ -18,11 +18,11 @@ const IndexPage = ({ pageContext }) => {
   const { group, index, first, last, pageCount } = pageContext
   const previousUrl = index - 1 == 1 ? '/' : (index - 1).toString()
   const nextUrl = (index + 1).toString()
-  console.log(pageContext)
+  // console.log(pageContext)
 
   return (
     <Layout>
-      <SEO title="Blog - Uche Nwakwuo {Duk_Stack}" />
+      <SEO title="Blog Page" />
       <section className="container blog-section">
       <h1 className="title">Blog</h1>
 
